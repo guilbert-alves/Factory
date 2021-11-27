@@ -11,15 +11,23 @@ package br.gov.ac.sefaz.treinamento.jdbc;
 //spring.jpa.show-sql=true
 //spring.jpa.hibernate.ddl-auto=create
 
-import br.gov.ac.sefaz.treinamento.jdbc.factory.JdbcFactory;
+import br.gov.ac.sefaz.treinamento.jdbc.dao.AutorDAO;
 
-import java.sql.Connection;
 
 public class JdbcApplication {
 
     public static void main(String[] args) {
-        JdbcFactory jdbcFactory = new JdbcFactory();
-        Connection conn = jdbcFactory.criarConexao();
+
+//        Autor autor = new Autor();
+//        autor.setId(2);
+//        autor.setNome("Guilbert 2");
+//        autor.setIdade(20);
+//        autor.setNascimento(LocalDate.of(2000, 12, 6));
+//        autor.setComentario("meu primeiro insert com jdbc");
+
+        AutorDAO dao = new AutorDAO();
+        dao.listarAutores().forEach(System.out::println);
+        System.out.println(dao.prorcuraPorID(2));
 
     }
 
