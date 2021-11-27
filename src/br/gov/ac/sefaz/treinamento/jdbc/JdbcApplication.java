@@ -11,12 +11,16 @@ package br.gov.ac.sefaz.treinamento.jdbc;
 //spring.jpa.show-sql=true
 //spring.jpa.hibernate.ddl-auto=create
 
+import br.gov.ac.sefaz.treinamento.jdbc.factory.JdbcFactory;
+
+import java.sql.Connection;
+
 public class JdbcApplication {
 
     public static void main(String[] args) {
 
-        System.out.println("aprendendo jdbc");
-
+        JdbcFactory jdbcFactory = new JdbcFactory();
+        Connection conn = jdbcFactory.criarConexao();
     }
 
 }
