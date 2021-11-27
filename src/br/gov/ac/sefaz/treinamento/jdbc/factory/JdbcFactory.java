@@ -25,7 +25,7 @@ public class JdbcFactory {
      * Classe de conexão jdbc com postgres
      */
 
-    public Connection criarConexao(){
+    public Connection criarConexao() {
         try {
             System.out.println("Iniciando conexão jdbc1");
             Class.forName(DRIVER_CLAS);
@@ -36,8 +36,22 @@ public class JdbcFactory {
             System.out.println("Driver não encontrado!");
             return null;
         } catch (SQLException e) {
-            System.out.println("Sql ERRO:" + e.getMessage());
+            tratarErrorSQL(e);
             return null;
+        }
+    }
+
+    /**
+     * Tratando erros do sql
+     * @param e {@link SQLException} parametro de exessão
+     */
+    private void tratarErrorSQL(SQLException e) {
+        if (e.getSQLState().equals("3D000")) {
+            System.out.println("Banco de daos não encontrado");
+        } else if (e.getSQLState().equals("28P01")) {
+            System.out.println("Senha incorreta");
+        } else {
+            System.out.println("Sql ERRO:" + e.getMessage() + "| ERRO CODE: " + e.getMessage());
         }
     }
 
