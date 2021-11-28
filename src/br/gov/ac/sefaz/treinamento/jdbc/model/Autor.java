@@ -6,13 +6,28 @@ import java.util.Objects;
 
 public class Autor implements Serializable {
 
-    public static final long serialVersionUID = 1;
+    public static final long serialVersionUID = 1L;
 
     private Integer id;
+
     private String nome;
+
     private Integer idade;
+
     private LocalDate nascimento;
-    private String comentario;
+
+    private String cometario;
+
+    public Autor() {
+    }
+
+    public Autor(Integer id, String nome, Integer idade, LocalDate nascimento, String cometario) {
+        this.id = id;
+        this.nome = nome;
+        this.idade = idade;
+        this.nascimento = nascimento;
+        this.cometario = cometario;
+    }
 
     public Integer getId() {
         return id;
@@ -46,12 +61,12 @@ public class Autor implements Serializable {
         this.nascimento = nascimento;
     }
 
-    public String getComentario() {
-        return comentario;
+    public String getCometario() {
+        return cometario;
     }
 
-    public void setComentario(String comentario) {
-        this.comentario = comentario;
+    public void setCometario(String cometario) {
+        this.cometario = cometario;
     }
 
     @Override
@@ -59,12 +74,12 @@ public class Autor implements Serializable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Autor autor = (Autor) o;
-        return Objects.equals(id, autor.id) && Objects.equals(nome, autor.nome) && Objects.equals(idade, autor.idade) && Objects.equals(nascimento, autor.nascimento) && Objects.equals(comentario, autor.comentario);
+        return Objects.equals(id, autor.id) && Objects.equals(nome, autor.nome) && Objects.equals(idade, autor.idade) && Objects.equals(nascimento, autor.nascimento) && Objects.equals(cometario, autor.cometario);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, nome, idade, nascimento, comentario);
+        return Objects.hash(id, nome, idade, nascimento, cometario);
     }
 
     @Override
@@ -74,7 +89,7 @@ public class Autor implements Serializable {
                 ", nome='" + nome + '\'' +
                 ", idade=" + idade +
                 ", nascimento=" + nascimento +
-                ", comentario='" + comentario + '\'' +
+                ", cometario='" + cometario + '\'' +
                 '}';
     }
 }

@@ -1,34 +1,36 @@
 package br.gov.ac.sefaz.treinamento.jdbc;
 
 
-//spring.datasource.driverClassName=org.postgresql.Driver
-//spring.datasource.url=jdbc:postgresql://localhost:5432/my_db
-//spring.datasource.username=postgres
-//spring.datasource.password=postgres
-//
-//spring.jpa.database-platform=org.hibernate.dialect.PostgreSQLDialect
-//spring.jpa.generate-ddl=true
-//spring.jpa.show-sql=true
-//spring.jpa.hibernate.ddl-auto=create
-
 import br.gov.ac.sefaz.treinamento.jdbc.dao.AutorDAO;
+import br.gov.ac.sefaz.treinamento.jdbc.model.Autor;
 
+import java.time.LocalDate;
 
 public class JdbcApplication {
 
     public static void main(String[] args) {
-
-//        Autor autor = new Autor();
-//        autor.setId(2);
-//        autor.setNome("Guilbert 2");
-//        autor.setIdade(20);
-//        autor.setNascimento(LocalDate.of(2000, 12, 6));
-//        autor.setComentario("meu primeiro insert com jdbc");
-
         AutorDAO dao = new AutorDAO();
-        dao.listarAutores().forEach(System.out::println);
-        System.out.println(dao.prorcuraPorID(2));
+//        final Autor antonio = new Autor(1, "Antonio", 29, LocalDate.of(1992, 4, 22), "");
+//        final Autor jose = new Autor(2, "Jose", 29, LocalDate.of(1992, 4, 22), "");
+//        final Autor maria = new Autor(3, "Maria", 29, LocalDate.of(1992, 4, 22), "");
+//        dao.salvar(antonio);
+//        dao.salvar(jose);
+//        dao.salvar(maria);
+//        dao.listarTodos().forEach(System.out::println);
+//        Autor maria = dao.procurarPorNome("maria");
+//        System.out.println(maria);
+//        maria.setComentario("estamos atualizando");
+//        dao.update(maria,3);
+//        maria = dao.procurarPorNome("maria");
+//        System.out.println(maria);
+
+//        dao.listarTodos().forEach(System.out::println);
+//        dao.removerPorId(2);
+//        dao.listarTodos().forEach(System.out::println);
+
+        dao.listarTodos().forEach(System.out::println);
+//        dao.removerTodos();
+//        dao.listarTodos().forEach(System.out::println);
 
     }
-
 }
