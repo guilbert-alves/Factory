@@ -1,4 +1,5 @@
 # treinamento-JDBC
+Projeto desenvolvido como forma de aprendizado da especficação JDBC. Ultilizado docker com imagem postgres.
 
 # Comandos do Docker Compose
 <br/>docker-compose up: cria e inicia os contêineres;<br/>
